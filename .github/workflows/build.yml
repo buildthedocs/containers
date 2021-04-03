@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        file: [ sphinx, texlive, hugo, bookdown ]
+        file: [ sphinx, miktex, texlive, hugo, bookdown ]
     runs-on: ubuntu-latest
     steps:
 
