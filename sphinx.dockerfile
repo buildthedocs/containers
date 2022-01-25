@@ -15,9 +15,11 @@ RUN pip install -r /tmp/base.txt
 FROM sphinx_base AS sphinx_featured
 COPY sphinx_ctx/featured.txt /tmp/
 RUN apk add -U --no-cache \
+      cairo \
       gcc \
       jpeg-dev \
       libffi-dev \
+      libxcb-dev \
       libxml2-dev \
       libxslt-dev \
       linux-headers \
