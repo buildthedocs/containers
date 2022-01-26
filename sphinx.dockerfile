@@ -15,11 +15,9 @@ RUN pip install -r /tmp/base.txt
 FROM sphinx_base AS sphinx_featured
 COPY sphinx_ctx/featured.txt /tmp/
 RUN apk add -U --no-cache \
-      cairo \
       gcc \
       jpeg-dev \
       libffi-dev \
-      libxcb-dev \
       libxml2-dev \
       libxslt-dev \
       linux-headers \
@@ -31,3 +29,17 @@ RUN pip install -r /tmp/featured.txt
 
 FROM sphinx_featured AS sphinx_pytooling
 RUN apk add -U --no-cache graphviz
+
+#---
+
+FROM sphinx_featured AS sphinx_wavedrom
+RUN apk add -U --no-cache \
+      cairo \
+      cairo-dev \
+      g++ \
+      libxcb-dev \
+      npm \
+      pango-dev \
+      pixman-dev
+RUN npm i -g wavedrom-cli
+RUN pip install sphinxcontrib-wavedrom

@@ -1,3 +1,2 @@
 sphinx-autoapi
-sphinxcontrib-wavedrom
 lxml
