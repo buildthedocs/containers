@@ -1,4 +1,4 @@
-FROM python:3.8-alpine3.10 AS sphinx_min
+FROM python:alpine AS sphinx_min
 COPY sphinx_ctx/min.txt /tmp/
 RUN apk --no-cache -U upgrade && apk --no-cache add curl git make \
   && pip install -r /tmp/min.txt
