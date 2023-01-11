@@ -1,4 +1,4 @@
-FROM debian:buster-slim AS latex
+FROM debian:bullseye-slim AS latex
 RUN apt-get update -y && apt-get -y install make texlive-full texlive-fonts-recommended texlive-latex-extra-doc
 WORKDIR /src
 
