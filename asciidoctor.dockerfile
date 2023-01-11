@@ -1,7 +1,6 @@
 FROM asciidoctor/docker-asciidoctor AS asciidoctor
 
-RUN ln -s /usr/bin/python3 /usr/bin/python \
- && apk add -U --no-cache --virtual .tmpdeps \
+RUN apk add -U --no-cache --virtual .tmpdeps \
     g++ \
     cairo-dev \
     giflib-dev \
