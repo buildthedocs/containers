@@ -16,3 +16,8 @@ FROM sphinx_base AS sphinx_featured
 COPY sphinx_ctx/featured.txt /tmp/
 RUN apk add -U --no-cache gcc linux-headers musl-dev libffi-dev zlib-dev jpeg-dev
 RUN pip install -r /tmp/featured.txt
+
+#---
+
+FROM sphinx_featured AS sphinx_pytooling
+RUN apk add -U --no-cache graphviz
